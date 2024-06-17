@@ -27,15 +27,20 @@ namespace api.controllers
         [HttpGet]
         public async Task<IActionResult> GetAll()
         {
+            if(!ModelState.IsValid)
+                return BadRequest(ModelState);
+             
             var stocks = await _stockRepository.GetAllAsync();
             var stockDto = stocks.Select(s => s.ToStockDto());
 
             return Ok(stockDto);
         }
-
-        [HttpGet("{id}")]
+        [HttpGet("{id:int}")]
         public async Task<IActionResult> GetById([FromRoute] int id)
         {
+            if(!ModelState.IsValid)
+                return BadRequest(ModelState);
+             
             var stock = await _stockRepository.GetByIdAsync (id);
 
             if(stock == null)
@@ -45,41 +50,39 @@ namespace api.controllers
 
             return Ok(stock.ToStockDto());
         }
-
         [HttpPost]
         public async Task<IActionResult> Create([FromBody] CreateStockRequestDto stockDto)
         {
+            if(!ModelState.IsValid)
+                return BadRequest(ModelState);
+             
             var stockModel = stockDto.ToStockDtoFromCreateDto();
             await _stockRepository.CreateAsync(stockModel);   
             return CreatedAtAction(nameof(GetById), new { id = stockModel.Id }, stockModel.ToStockDto());
         }
-
         [HttpPut]
-        [Route("{id}")]
+        [Route("{id:int}")]
         public async Task<IActionResult> Update([FromRoute] int id, [FromBody] UpdateStockRequestDto updateDto)
         {
+            if(!ModelState.IsValid)
+                return BadRequest(ModelState);
+             
             var stockModel = await _stockRepository.UpdateAsync(id, updateDto) ;
 
             if(stockModel == null)
             {
                 return NotFound();
             }
-
-            stockModel.Symbol = updateDto.Symbol;
-            stockModel.CompanyName = updateDto.CompanyName;
-            stockModel.Purchase = updateDto.Purchase;
-            stockModel.LastDiv = updateDto.LastDiv;
-            stockModel.Industry = updateDto.Industry;
-            stockModel.MarketCap = updateDto.MarketCap;
-
-            await _context.SaveChangesAsync();
             return Ok(stockModel.ToStockDto());
         }
 
         [HttpDelete]
-        [Route("{id}")]
+        [Route("{id:int}")]
         public async Task<IActionResult> Delete([FromRoute] int id)
         {
+            if(!ModelState.IsValid)
+                return BadRequest(ModelState);
+             
             var stockModel = await _stockRepository.DeleteAsync(id);
 
             if(stockModel == null)
@@ -87,11 +90,7 @@ namespace api.controllers
                 return NotFound();
             }
 
-            _context.Stocks.Remove(stockModel);
- 
-            await _context.SaveChangesAsync();
-
-            return NoContent();
+            return Ok(stockModel.ToStockDto());
         }
     }
 }
