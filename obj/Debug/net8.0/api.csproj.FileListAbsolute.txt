@@ -108,3 +108,17 @@
 /Users/rabinrai/Files/Projects/api/bin/Debug/net8.0/Newtonsoft.Json.dll
 /Users/rabinrai/Files/Projects/api/bin/Debug/net8.0/Newtonsoft.Json.Bson.dll
 /Users/rabinrai/Files/Projects/api/obj/Debug/net8.0/api.sourcelink.json
+/Users/rabinrai/Files/Projects/api/bin/Debug/net8.0/Microsoft.AspNetCore.Authentication.JwtBearer.dll
+/Users/rabinrai/Files/Projects/api/bin/Debug/net8.0/Microsoft.AspNetCore.Cryptography.Internal.dll
+/Users/rabinrai/Files/Projects/api/bin/Debug/net8.0/Microsoft.AspNetCore.Cryptography.KeyDerivation.dll
+/Users/rabinrai/Files/Projects/api/bin/Debug/net8.0/Microsoft.AspNetCore.Identity.EntityFrameworkCore.dll
+/Users/rabinrai/Files/Projects/api/bin/Debug/net8.0/Microsoft.Extensions.Identity.Core.dll
+/Users/rabinrai/Files/Projects/api/bin/Debug/net8.0/Microsoft.Extensions.Identity.Stores.dll
+/Users/rabinrai/Files/Projects/api/bin/Debug/net8.0/Microsoft.Extensions.Options.dll
+/Users/rabinrai/Files/Projects/api/bin/Debug/net8.0/Microsoft.IdentityModel.Abstractions.dll
+/Users/rabinrai/Files/Projects/api/bin/Debug/net8.0/Microsoft.IdentityModel.JsonWebTokens.dll
+/Users/rabinrai/Files/Projects/api/bin/Debug/net8.0/Microsoft.IdentityModel.Logging.dll
+/Users/rabinrai/Files/Projects/api/bin/Debug/net8.0/Microsoft.IdentityModel.Protocols.dll
+/Users/rabinrai/Files/Projects/api/bin/Debug/net8.0/Microsoft.IdentityModel.Protocols.OpenIdConnect.dll
+/Users/rabinrai/Files/Projects/api/bin/Debug/net8.0/Microsoft.IdentityModel.Tokens.dll
+/Users/rabinrai/Files/Projects/api/bin/Debug/net8.0/System.IdentityModel.Tokens.Jwt.dll
